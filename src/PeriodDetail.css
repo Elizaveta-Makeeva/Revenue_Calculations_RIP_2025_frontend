@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background-color: #02030C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.period-detail-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #02030C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* Уменьшено для нового навбара */
+  color: white;
+}
+
+/* Удаляем старый header */
+.period-detail-header {
+  display: none;
+}
+
+.period-detail-logo-text {
+  color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.period-detail-logo-text:hover {
+  cursor: pointer;
+}
+
+.period-detail-logo {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 22px;
+  background-color: #47F89F;
+  color: black;
+  margin-left: 7px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.period-detail-logo:hover {
+  cursor: pointer;
+}
+
+.period-detail-card {
+  width: 697px;
+  min-height: 400px;
+  background-color: #1C201F;
+  border-radius: 8px;
+  padding: 35px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.period-detail-card-title {
+  color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.period-detail-card-duration {
+  color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.period-detail-card-description {
+  color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.period-detail-card-img {
+  width: 130px;
+  height: 130px;
+  object-fit: fill;
+  margin: 10px auto;
+}
+
+/* Адаптивность */
+@media (max-width: 1400px) {
+  .period-detail-header {
+    width: calc(100% - 40px);
+  }
+  
+  .period-detail-card {
+    width: calc(100% - 40px);
+    max-width: 697px;
+  }
+}

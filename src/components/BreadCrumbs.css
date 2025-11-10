@@ -1,0 +1,51 @@
+:root {
+  --active_color: #47F89F;
+  --additional_color: #ffffff;
+}
+
+.breadcrumbs {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 20px 0 0 25px;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumbs * {
+  color: var(--additional_color);
+  transition: 0.5s;
+}
+
+.breadcrumbs .breadcrumb-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.breadcrumbs .breadcrumb-link:hover {
+  color: var(--active_color);
+}
+
+.breadcrumbs li {
+  position: relative;
+}
+
+.breadcrumbs li:not(.slash) {
+  cursor: pointer;
+}
+
+.breadcrumbs li.slash {
+  cursor: default;
+}
+
+.breadcrumbs li:last-child {
+  color: var(--active_color);
+}
+
+.breadcrumbs li:last-child .breadcrumb-link {
+  cursor: default;
+  pointer-events: none;
+}
