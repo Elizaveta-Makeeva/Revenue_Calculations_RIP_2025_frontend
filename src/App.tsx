@@ -1,14 +1,15 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// App.tsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './HomePage'
 import PeriodsPage from './PeriodsPage'
 import PeriodDetail from './PeriodDetail'
+import { dest_root } from '../target_config' // добавьте этот импорт
 import './App.css'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename={dest_root}> {/* добавьте basename */}
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,7 +17,7 @@ function App() {
         <Route path="/periods" element={<PeriodsPage />} />
         <Route path="/period/:id" element={<PeriodDetail />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,7 @@
 import type { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PeriodCard.css';
+import { dest_img } from '../../target_config';
 
 interface Props {
   id: number;
@@ -16,15 +18,39 @@ interface Props {
 }
 
 const PeriodCard: FC<Props> = ({ id, title, description, duration, img }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/period/${id}`);
+  };
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error('Image failed to load:', img);
+    e.currentTarget.style.display = 'none'; // Скрываем сломанную картинку
+  };
+
   return (
-    <div className="period-card">
+    <div className="period-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <div className="period-card-title">{title}</div>
       <div className="period-card-description">{description}</div>
-      {img && <img src={img} alt={title} className="period-card-img" />}
+      {img && (
+        <img 
+          src={`${dest_img}/${img}`} 
+          alt={title} 
+          className="period-card-img" 
+          onError={handleImageError}
+        />
+      )}
       <div className="period-card-duration">{duration}</div>
-      <a href={`/period/${id}`} className="period-card-more">
+      <button 
+        className="period-card-more"
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate(`/period/${id}`);
+        }}
+      >
         Подробнее
-      </a>
+      </button>
     </div>
   );
 };

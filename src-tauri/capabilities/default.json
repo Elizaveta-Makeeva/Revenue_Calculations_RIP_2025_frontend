@@ -1,0 +1,21 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "identifier": "default",
+  "description": "Default capabilities",
+  "permissions": [
+    "cors-fetch:default",
+    {
+      "identifier": "http:default",
+      "allow": [
+        { "url": "http://192.168.56.1:8081" },
+        { "url": "http://192.168.56.1:9000" },
+        { "url": "http://localhost:3000" }
+      ],
+      "deny": []
+    },
+    "core:default",
+    "http:allow-fetch",
+    "http:allow-fetch-read-body",
+    "http:allow-fetch-send"
+  ]
+}

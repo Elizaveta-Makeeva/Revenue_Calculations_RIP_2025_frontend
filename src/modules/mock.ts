@@ -1,4 +1,4 @@
-import type { Period, PeriodsResult } from "./periodsApi";
+import type { PeriodsResult } from "./periodsApi";
 
 export const PERIODS_MOCK: PeriodsResult = {
   resultCount: 3,
@@ -10,7 +10,7 @@ export const PERIODS_MOCK: PeriodsResult = {
       duration: "3 месяца",
       short_description: "Краткосрочный период анализа",
       detailed_description: "Подробный анализ выручки за 3 месяца с учетом сезонных факторов и краткосрочных трендов.",
-      img: "http://127.0.0.1:9000/periods/12months.png",
+      img: "/12months.png",
       is_active: true
     },
     {
@@ -20,7 +20,7 @@ export const PERIODS_MOCK: PeriodsResult = {
       duration: "6 месяцев",
       short_description: "Среднесрочный период анализа",
       detailed_description: "Комплексный анализ выручки за 6 месяцев с выявлением среднесрочных трендов и цикличности.",
-      img: "http://127.0.0.1:9000/periods/12months.png",
+      img: "/18quarters.png",
       is_active: true
     },
     {
@@ -30,7 +30,7 @@ export const PERIODS_MOCK: PeriodsResult = {
       duration: "12 месяцев",
       short_description: "Годовой период анализа",
       detailed_description: "Полный годовой анализ выручки с учетом всех сезонных факторов, трендов и бизнес-циклов.",
-      img: "http://127.0.0.1:9000/periods/12months.png",
+      img: "/12quarters.png",
       is_active: true
     }
   ],

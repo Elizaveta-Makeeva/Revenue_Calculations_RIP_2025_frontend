@@ -5,6 +5,7 @@ import type { Period } from './modules/periodsApi'
 import { PERIODS_MOCK } from './modules/mock';
 import BreadCrumbs from './components/BreadCrumbs';
 import './PeriodDetail.css';
+import { dest_img } from '../target_config';
 
 const PeriodDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -77,7 +78,7 @@ const PeriodDetail: React.FC = () => {
           {period.detailed_description}
         </div>
         {period.img && (
-          <img src={period.img} alt={period.title} className="period-detail-card-img" />
+          <img src={`${dest_img}/${period.img}`} alt={period.title} className="period-detail-card-img" />
         )}
         <div className="period-detail-card-duration">
           {period.duration}

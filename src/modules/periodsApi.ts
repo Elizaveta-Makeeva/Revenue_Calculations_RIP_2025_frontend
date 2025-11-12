@@ -1,3 +1,6 @@
+// periodsApi.ts
+import { dest_api } from '../../target_config';
+
 export interface Period {
   id: number;
   title?: string;
@@ -17,8 +20,8 @@ export interface PeriodsResult {
   results: Period[];
 }
 
+const API_URL = dest_api; // используем нашу конфигурацию
 
-const API_URL = '/api';
 export const getPeriodsByQuery = async (query = ''): Promise<PeriodsResult> => {
   const url = query 
     ? `${API_URL}/periods?title=${encodeURIComponent(query)}` 
