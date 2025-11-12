@@ -1,5 +1,4 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './HomePage'
 import PeriodsPage from './PeriodsPage'
@@ -8,15 +7,17 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/RIP_2025_frontend">
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/periods" element={<PeriodsPage />} />
         <Route path="/period/:id" element={<PeriodDetail />} />
+        {/* Добавляем резервный маршрут для обработки старых ссылок */}
+        <Route path="/RIP_2025_frontend/period/:id" element={<PeriodDetail />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
