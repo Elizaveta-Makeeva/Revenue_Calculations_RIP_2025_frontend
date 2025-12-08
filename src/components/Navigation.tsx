@@ -53,12 +53,6 @@ const Navigation: React.FC = () => {
               Периоды
             </a>
           </li>
-          {/* Убрали ссылку на корзину выручки */}
-          <li>
-            <a className="nav-link disabled">
-              Заявки
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
